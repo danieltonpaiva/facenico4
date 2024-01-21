@@ -6,6 +6,7 @@ from facefusion import wording
 from facefusion.uis.typing import File
 from facefusion.filesystem import are_images
 from facefusion.uis.core import register_ui_component
+import os
 
 SOURCE_FILE : Optional[gradio.File] = None
 SOURCE_IMAGE : Optional[gradio.Image] = None
