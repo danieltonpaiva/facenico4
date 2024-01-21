@@ -10,6 +10,7 @@ import platform
 import shutil
 import onnxruntime
 from argparse import ArgumentParser, HelpFormatter
+from IPython.display import clear_output
 
 import telebot
 import facefusion.choices
@@ -308,6 +309,7 @@ def process_video() -> None:
 
 	if is_video(facefusion.globals.output_path):
 		logger.info(wording.get('processing_video_succeed'), __name__.upper())
+		clear_output()
 		print(facefusion.globals.output_path)
 		print("Enviando para o Telegram...")
 		with open(facefusion.globals.output_path, 'rb') as video:
