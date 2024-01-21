@@ -64,6 +64,16 @@ def merge_video2(target_path : str, fps : float) -> bool:
 	commands.extend([ '-pix_fmt', 'yuv420p', '-colorspace', 'bt709', '-y', temp_output_video_path ])
 	return run_ffmpeg(commands)
 
+def get_crf_value(quality):
+    if facefusion.globals.output_video_encoder in ['libx264', 'libx265']:
+        return round(51 - (quality * 0.51))
+    elif facefusion.globals.output_video_encoder in ['libvpx-vp9']:
+        return round(63 - (quality * 0.63))
+    elif facefusion.globals.output_video_encoder in ['h264_nvenc', 'hevc_nvenc']:
+        return round(51 - (quality * 0.51))
+    else:
+        return None  # Add handling for other cases as needed
+
 def merge_video(target_path: str, fps: float) -> bool:
     temp_output_video_path = get_temp_output_video_path(target_path)
     temp_frames_pattern = get_temp_frames_pattern(target_path, '%04d')
