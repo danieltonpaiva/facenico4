@@ -283,7 +283,7 @@ def process_video(pr=gradio.Progress(track_tqdm=True)) -> None:
 	if temp_frame_paths:
 		for frame_processor_module in get_frame_processors_modules(facefusion.globals.frame_processors):
 			logger.info(wording.get('processing'), frame_processor_module.NAME)
-			frame_processor_module.process_video(facefusion.globals.source_paths, temp_frame_paths pr=gradio.Progress(track_tqdm=True))
+			frame_processor_module.process_video(facefusion.globals.source_paths, temp_frame_paths, pr=gradio.Progress(track_tqdm=True))
 			frame_processor_module.post_process()
 	else:
 		logger.error(wording.get('temp_frames_not_found'), __name__.upper())
