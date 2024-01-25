@@ -40,7 +40,7 @@ def render() -> None:
 	for x in arquivos:
 		files.append('/kaggle/working/facenico4/exemplos/' + x)
 
-	examples = gradio.Examples(sorted(files), SOURCE_FILE, examples_per_page=20)
+	examples = gradio.Examples(sorted(files), SOURCE_IMAGE, examples_per_page=20)
 
 
 def listen() -> None:
