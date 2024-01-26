@@ -54,8 +54,8 @@ def render2() -> gradio.Blocks:
 
 def render() -> gradio.Blocks:
 	with gradio.Blocks() as layout:
-		with gradio.Row():
-			with gradio.Tab("Configurações"):
+		with gradio.Tab("Configurações"):
+			with gradio.Row():
 				with gradio.Column(scale = 2):
 					with gradio.Blocks():
 						about.render()
@@ -78,7 +78,8 @@ def render() -> gradio.Blocks:
 						face_masker.render()
 					with gradio.Blocks():
 						face_analyser.render()
-			with gradio.Tab("Execução"):
+		with gradio.Tab("Execução"):
+			with gradio.Row():
 				with gradio.Column(scale = 2):
 					with gradio.Blocks():
 						source.render()
