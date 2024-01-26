@@ -85,7 +85,7 @@ def multi_process_frames2(source_paths : List[str], temp_frame_paths : List[str]
 
 
 def multi_process_frames(source_paths : List[str], temp_frame_paths : List[str], process_frames : Process_Frames, pr=gradio.Progress(track_tqdm=True)) -> None:
-	print('esta processando...')
+	print('esta processando....')
 	with tqdm(total = len(temp_frame_paths), desc = wording.get('processing'), unit = 'frame', ascii = ' =', disable = facefusion.globals.log_level in [ 'warn', 'error' ]) as progress:
 		for temp_frame_path in temp_frame_paths:
 			process_frames(source_paths, [temp_frame_path], progress.update)
