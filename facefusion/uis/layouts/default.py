@@ -11,7 +11,7 @@ def pre_render() -> bool:
 	return True
 
 
-def render2() -> gradio.Blocks:
+def render() -> gradio.Blocks:
 	with gradio.Blocks() as layout:
 		with gradio.Row():
 			with gradio.Column(scale = 2):
@@ -52,7 +52,7 @@ def render2() -> gradio.Blocks:
 					face_analyser.render()
 	return layout
 
-def render() -> gradio.Blocks:
+def render2() -> gradio.Blocks:
 	with gradio.Blocks() as layout:
 		with gradio.Tab("Configurações"):
 			with gradio.Row():
