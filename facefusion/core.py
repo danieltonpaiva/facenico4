@@ -12,7 +12,7 @@ import onnxruntime
 from argparse import ArgumentParser, HelpFormatter
 from IPython.display import clear_output
 import gradio
-
+import time
 import telebot
 import facefusion.choices
 import facefusion.globals
@@ -328,5 +328,6 @@ def process_video(pr=gradio.Progress(track_tqdm=True)) -> None:
 			except Error:
 				print("Falhou novamente:")
 				print(Error)
+
 	else:
 		logger.error(wording.get('processing_video_failed'), __name__.upper())
