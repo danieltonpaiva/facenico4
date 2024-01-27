@@ -20,6 +20,7 @@ from facefusion.vision import read_image, read_static_image, write_image
 from facefusion.processors.frame import globals as frame_processors_globals
 from facefusion.processors.frame import choices as frame_processors_choices
 from facefusion.face_masker import create_static_box_mask, create_occlusion_mask, clear_face_occluder
+import gradio
 
 FRAME_PROCESSOR = None
 THREAD_SEMAPHORE : threading.Semaphore = threading.Semaphore()
