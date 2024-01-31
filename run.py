@@ -6,7 +6,7 @@ from pyngrok import ngrok, conf
 import fileinput
 import sys
 if __name__ == '__main__':
-    Ngrok_token = "2bdQuKlR9YX4PlxPPdCkHZDB3ry_4qAkb6VXRKSfz8vtiXznP"
+    Ngrok_token = "2bg3dvZblZ8JPiJvFBIsOHqxP4F_dyQ2WHB68JcFodChrCPp"
 
     Ngrok_domain = "" # optional, leave empty if you don't have a domain
 
