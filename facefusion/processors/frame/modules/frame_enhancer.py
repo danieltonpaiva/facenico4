@@ -168,5 +168,5 @@ def process_image(source_paths : List[str], target_path : str, output_path : str
 	write_image(output_path, result)
 
 
-def process_video(source_paths : List[str], temp_frame_paths : List[str]) -> None:
+def process_video(source_paths : List[str], temp_frame_paths : List[str], pr=gradio.Progress(track_tqdm=True)) -> None:
 	frame_processors.multi_process_frames(None, temp_frame_paths, process_frames)
